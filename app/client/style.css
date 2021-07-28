@@ -1,0 +1,19 @@
+.aboutUs {
+  padding-top: 50px;
+}
+
+.aboutUs-background {
+  background: url('/images/aboutUs-top.jpeg') no-repeat center center fixed;
+  border-radius: 25px;
+}
+
+.aboutUs-body {
+  padding-top: 25px;
+}
+
+.aboutUs-background-body {
+  background: #b48415;
+  border-radius: 25px;
+}
+
+

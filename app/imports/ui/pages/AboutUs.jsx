@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Image, Header, List, Icon } from 'semantic-ui-react';
 
+// Image citation: https://www.hawaii.edu/news/2020/09/11/provost-message-planning-for-post-pandemic/
 /** A simple static component to render some text for the landing page. */
 class AboutUs extends React.Component {
   render() {
@@ -33,8 +34,8 @@ class AboutUs extends React.Component {
                   However, finding these people can sometimes be a bit of a challenge, especially with the dynamic changes occurring
                   within our education systems.  Opportunities are everywhere, but they can be scattered all over the place.
                   Making connections shouldn&apos;t be a stressful scavenger hunt, but rather finding contacts should be easy and straight forward
-                  they should be focused on forming relationships and spreading &apos;Aloha.  Being part of the UH community, we should consider
-                  members of our &apos:Ohana, yet at the same time, being part of the contributors of the world, we should also consider the networks that we form.
+                  in order to spread &apos;Aloha and form relationships.  Within the UH community, we should consider
+                  members of our &apos;Ohana, yet at the same time, being part of the contributors to the world, we should also consider the networks that we form.
                   Hence, why not have a one-stop shop that aims of achieving both through seamless connections?
                 </p>
               </div>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Item, Grid, Divider, Header, Image, Label } from 'semantic-ui-react';
+import { Item, Grid, Divider, Header, Image, Label, Button, Modal } from 'semantic-ui-react';
 
 class ListUsersCard extends React.Component {
+
   render() {
     /* const [open, setOpen] = React.useState(false); */
     const aboutme = [
@@ -9,6 +10,7 @@ class ListUsersCard extends React.Component {
       'engineering, artificial intelligence, robotics, circuits, and machine learning. I am looking to find a faculty advisor ' +
       'who can help me develop a project to fulfill my capstone project requirement for graduation a',
     ].join(' ');
+
     return (
 
       <Item style={{ padding: '0rem 1.5rem 0.5rem 1.5rem' }}>
@@ -16,23 +18,24 @@ class ListUsersCard extends React.Component {
           <Item.Header>
             <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
               <Image size='huge' circular src="/images/annePic.png"/>
-              Anne Jean Eyers, Computer Engineer, Senior
+                Anne Jean Eyers, Computer Engineer, Senior
             </Header>
           </Item.Header>
           <Item.Description>
             <Grid.Column>
               <bio>
                 <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
-                  About Me
+                    About Me
                 </Header>
+                <Modal
+                  trigger={<Button className='lmButton' compact floated='right'>Learn More</Button>}
+                />
                 <span>{aboutme}</span>
               </bio>
             </Grid.Column>
             <Divider hidden>
-              <Item.Extra>
-                <Label size='tiny'>Machine Learning</Label>
-                <Label size='tiny'>Robotics</Label>
-              </Item.Extra>
+              <Label size='tiny'>Machine Learning</Label>
+              <Label size='tiny'>Robotics</Label>
             </Divider>
           </Item.Description>
         </Item.Content>

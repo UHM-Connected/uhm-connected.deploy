@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+.listUsers{
+  margin-bottom: 10px;
+  background: #1a3b29 !important;
+}
+
+.listProfileHeader {
+  font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
+  letter-spacing: 2px;
+  text-transform: uppercase!important;
+}
+
+name{
+  font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
+  letter-spacing: 2px;
+  font-size: x-small;
+  text-transform: uppercase!important;
+}
+bio{
+  color: white;
+}
+
+interest{
+  color: white;
+}
+
+.filter{
+  background: #b48415!important;
+}

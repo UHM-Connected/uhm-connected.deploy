@@ -39,7 +39,6 @@ class AddStuff extends React.Component {
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-
   render() {
     let fRef = null;
     return (

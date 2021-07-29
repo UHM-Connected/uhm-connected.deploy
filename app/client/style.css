@@ -1,10 +1,18 @@
+body {
+  font-family: 'Poppins', serif !important;
+}
+
 .aboutUs {
   padding-top: 50px;
 }
 
 .aboutUs-background {
-  background: url('/images/aboutUs-top.jpeg') no-repeat center center fixed;
-  border-radius: 25px;
+  background: url('https://www.hawaii.edu/news/wp-content/uploads/2020/06/manoa-gnrc-aerial-quad.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 50px;
+  padding: 125px;
+  max-height: 300%;
+  max-width: 1000%;
 }
 
 .aboutUs-body {
@@ -12,8 +20,38 @@
 }
 
 .aboutUs-background-body {
-  background: #b48415;
+  background: linear-gradient(0deg, white 80% , #b48415 0% );
   border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
 }
+
+.aboutUs-background-body2 {
+  background: linear-gradient(0deg, white 75% , #b48415 0% );
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.ui.huge.inverted.center.aligned.header.aboutUs-header {
+  margin-bottom: 30px;
+}
+
+.ui.block.header.aboutUs-center-text {
+  margin-top: 20px;
+}
+
+.ui.list.aboutUs-list {
+  font-size: 20px !important;
+}
+
+.ui.inverted.header {
+  padding-top: 10px;
+  font-family: 'Poppins', serif !important;
+}
+
+
 
 

@@ -29,6 +29,9 @@ class ListUsersCard extends React.Component {
                 </Header>
                 <Modal
                   trigger={<Button className='lmButton' compact floated='right'>Learn More</Button>}
+                  header='Anne Jean Eyers'
+                  content='test'
+                  actions={[{ key: 'connect', content: 'Connect', postive: true }]}
                 />
                 <span>{aboutme}</span>
               </bio>

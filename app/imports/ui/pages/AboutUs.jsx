@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Image, Header, List, Icon } from 'semantic-ui-react';
 
 // Image citation: https://www.hawaii.edu/news/2020/09/11/provost-message-planning-for-post-pandemic/
+// Logo citation: https://www6.pbrc.hawaii.edu/logos/
 /** A simple static component to render some text for the landing page. */
 class AboutUs extends React.Component {
   render() {
@@ -24,8 +25,8 @@ class AboutUs extends React.Component {
             <Grid.Column>
               <div className="aboutUs-background-body">
                 <Header as='h2' inverted>Our Mission <Icon color='white' name='star' size='huge' floated='right'/></Header>
-                <Header as='h3' size="medium">
-                  The spirit of &apos;Aloha and the bonds of &apos;Ohana are at its strongest when people bond together, willing to help
+                <Header as='h3' size="medium" className="aboutUs-mission-header">
+                  The spirit of &apos;Aloha and the bonds of &apos;Ohana are at its strongest when people connect together, willing to help
                   each other out.
                 </Header>
                 <p className="aboutUs-text">

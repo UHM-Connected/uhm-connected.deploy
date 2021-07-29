@@ -12,7 +12,7 @@ class Signup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '', password: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -22,12 +22,12 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a user profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, firstname, lastname, profilepic, bio, password } = this.state;
+    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio });
+        Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio, major, classStanding: standing, interests, skills, education, work, references });
         this.setState({ error: '', redirectToReferer: true });
       }
     });
@@ -92,6 +92,46 @@ class Signup extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Form.Input
+                  label="Major"
+                  id="signup-form-major"
+                  icon="camera"
+                  iconPosition="left"
+                  name="major"
+                  placeholder="Major or Department"
+                  type="major"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Class Standing"
+                  id="signup-form-standing"
+                  icon="camera"
+                  iconPosition="left"
+                  name="standing"
+                  placeholder="What year are you in?"
+                  type="standing"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Interests"
+                  id="signup-form-interests"
+                  icon="camera"
+                  iconPosition="left"
+                  name="interests"
+                  placeholder="What are you interested in?"
+                  type="interests"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Skills"
+                  id="signup-form-skills"
+                  icon="camera"
+                  iconPosition="left"
+                  name="skills"
+                  placeholder="What are your areas of expertise?"
+                  type="skills"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
                   label="Bio"
                   id="signup-form-bio"
                   icon="comment"
@@ -99,6 +139,36 @@ class Signup extends React.Component {
                   name="bio"
                   placeholder="Tell us a little bit about yourself (favorite movies, genres, etc.)"
                   type="bio"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Education"
+                  id="signup-form-education"
+                  icon="camera"
+                  iconPosition="left"
+                  name="education"
+                  placeholder="Where and what have you studied?"
+                  type="education"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="Work"
+                  id="signup-form-work"
+                  icon="camera"
+                  iconPosition="left"
+                  name="work"
+                  placeholder="Work Experience"
+                  type="Work"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  label="References"
+                  id="signup-form-references"
+                  icon="camera"
+                  iconPosition="left"
+                  name="references"
+                  placeholder="References"
+                  type="references"
                   onChange={this.handleChange}
                 />
                 <Form.Input

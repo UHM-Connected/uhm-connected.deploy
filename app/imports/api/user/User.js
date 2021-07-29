@@ -20,7 +20,14 @@ class UsersCollection {
       firstName: String,
       lastName: { type: String, optional: true },
       email: { type: String, unique: true },
+      major: { type: String, optional: true },
+      classStanding: { type: String, optional: true },
+      interests: { type: String, optional: true },
+      skills: { type: String, optional: true },
       bio: { type: String, optional: true },
+      education: { type: String, optional: true },
+      work: { type: String, optional: true },
+      references: { type: String, optional: true },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

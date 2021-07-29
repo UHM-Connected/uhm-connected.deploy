@@ -2,13 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import {
-  Button,
-  Checkbox,
   Form,
-  Input,
-  Radio,
-  Select,
-  TextArea,
   Dropdown,
   Grid,
   Container,
@@ -45,7 +39,8 @@ class Signup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '',
+      password: '', title: '', status: '', recentpublications: '', courses: '', error: '', redirectToReferer: false };
   }
 
   state = { showForm: false }
@@ -63,73 +58,159 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a user profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password } = this.state;
+    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password, title, status, recentpublications, courses, department } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio, major, classStanding: standing, interests, skills, education, work, references });
+        Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio, major, classStanding: standing, interests, skills, education, work,
+          references, title, status, recentPublications: recentpublications, courses, department });
         this.setState({ error: '', redirectToReferer: true });
       }
     });
   }
 
-  form = () => {
-    const { value } = this.state;
-    return <Form style={padding}>
-      <Form.Group widths='equal'>
-        <Form.Field
-          control={Select}
-          label='Title'
-          options={titleOptions}
-        />
-        <Form.Field
-          control={Input}
-          label='First name'
-          placeholder='First name'
-        />
-        <Form.Field
-          control={Input}
-          label='Last name'
-          placeholder='Last name'
-        />
-      </Form.Group>
-      <Form.Group inline>
-        <label>Quantity</label>
-        <Form.Field
-          control={Radio}
-          label='One'
-          value='1'
-          checked={value === '1'}
-          onChange={this.handleChange}
-        />
-        <Form.Field
-          control={Radio}
-          label='Two'
-          value='2'
-          checked={value === '2'}
-          onChange={this.handleChange}
-        />
-        <Form.Field
-          control={Radio}
-          label='Three'
-          value='3'
-          checked={value === '3'}
-          onChange={this.handleChange}
-        />
-      </Form.Group>
-      <Form.Field
-        control={TextArea}
-        label='About'
-        placeholder='Tell us more about you...'
+  form = () => <Container id="signup-page" style={padding}>
+    <Form onSubmit={this.submit} size='small'>
+      <Grid centered relaxed container>
+        <Grid.Column>
+          <Segment raised padded>
+            <Form.Group widths='equal'><Form.Select
+              fluid
+              required
+              label="Title"
+              id="signup-form-title"
+              options={titleOptions}
+              name="title"
+              type="title"
+              placeholder="Title"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              fluid
+              required
+              label="First Name"
+              id="signup-form-firstname"
+              icon="user"
+              iconPosition="left"
+              name="firstname"
+              placeholder="First Name"
+              type="firstname"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              fluid
+              required
+              label="Last Name"
+              id="signup-form-lastname"
+              icon="user"
+              iconPosition="left"
+              name="lastname"
+              placeholder="Last Name"
+              type="lastname"
+              onChange={this.handleChange}
+            /></Form.Group>
+            <Form.Input
+              fluid
+              required
+              label="Email"
+              id="signup-form-email"
+              icon="envelope"
+              iconPosition="left"
+              name="email"
+              type="email"
+              placeholder="E-mail address"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              fluid
+              label="Profile Picture"
+              id="signup-form-profilepic"
+              icon="camera"
+              iconPosition="left"
+              name="profilepic"
+              placeholder="URL of image"
+              type="profilepic"
+              onChange={this.handleChange}/>
+            <Form.Input
+              label="Department"
+              id="signup-form-department"
+              name="department"
+              placeholder="Department"
+              type="department"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Interests"
+              id="signup-form-interests"
+              name="interests"
+              placeholder="What are your research interests?"
+              type="interests"
+              onChange={this.handleChange}
+            />
+            <Form.TextArea
+              label="About"
+              id="signup-form-bio"
+              icon="camera"
+              iconPosition="left"
+              name="bio"
+              placeholder="Tell us more about you. . ."
+              type="bio"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Recent Publications"
+              id="signup-form-publications"
+              name="publications"
+              placeholder="Have you published anything recently?"
+              type="publications"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Courses"
+              id="signup-form-courses"
+              name="courses"
+              placeholder="What courses are you teaching?"
+              type="courses"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Education"
+              id="signup-form-education"
+              name="education"
+              placeholder="Where and what have you studied?"
+              type="education"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              required
+              label="Password"
+              id="signup-form-password"
+              icon="lock"
+              iconPosition="left"
+              name="password"
+              placeholder="Password"
+              type="password"
+              onChange={this.handleChange}
+            />
+            <Form.Button id="signup-form-submit" content="Submit"/>
+          </Segment>
+        </Grid.Column>
+      </Grid>
+    </Form>
+    <Message>
+            Already have an account? Login <Link to="/signin">here</Link>
+    </Message>
+    {this.state.error === '' ? (
+      ''
+    ) : (
+      <Message
+        error
+        header="Registration was not successful"
+        content={this.state.error}
       />
-      <Form.Field
-        control={Checkbox}
-        label='I agree to the Terms and Conditions'
-      />
-      <Form.Field control={Button}>Submit</Form.Field>
-    </Form>;
-  }
+    )}
+  </Container>
 
   render() {
     // styles
@@ -142,7 +223,7 @@ class Signup extends React.Component {
     const { showForm } = this.state;
     const { value } = this.state;
     return (
-      <div>
+      <div className='signup-background'>
         {/* eslint-disable-next-line no-nested-ternary */}
         { showForm ? (
           <div>
@@ -315,15 +396,15 @@ class Signup extends React.Component {
                 </Container>
 
               ) :
-                <Grid verticalAlign='middle' textAlign='center' container>
-                  <Grid.Column>
-                    <h1>Thank you for your interest in registering!</h1>
-                    <h1>I am a         <Dropdown
-                      onChange={this.handleDropdownChange}
-                      options={statusOptions}
-                      selection
-                      button
-                      value={value} /></h1>
+                <Grid id='landing-page' verticalAlign='middle' textAlign='center' container>
+                  <Grid.Column width={50}>
+                    <h1 className='signup-text'>Thank you for your interest in registering!
+                      <p>I am a         <Dropdown
+                        onChange={this.handleDropdownChange}
+                        options={statusOptions}
+                        selection
+                        button
+                        value={value} /></p></h1>
                   </Grid.Column>
                 </Grid>
             )

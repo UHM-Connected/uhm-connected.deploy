@@ -1,0 +1,26 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.signup-background {
+    background-color: #1a3b29;
+    height: 100vh;
+}
+
+.signup-text {
+    padding-top: 20%;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: "Poppins Bold";
+    font-kerning: auto;
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('app/public/themes/default/assets/fonts/Poppins-Bold.ttf') format("ttf");
+    font-weight: normal;
+}

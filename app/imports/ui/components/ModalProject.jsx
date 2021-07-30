@@ -1,17 +1,19 @@
 import React from 'react';
-import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 function ModalProject() {
 
+  const [setOpen] = React.useState(false);
+
   return (
-      <Button className='lmButton'
-              compact floated='right'
-              content="Connect"
-              labelPosition='right'
-              icon='checkmark'
-              onClick={() => setOpen(false)}
-              positive
-      />
+    <Button className='lmButton'
+      compact floated='right'
+      content="Connect"
+      labelPosition='right'
+      icon='checkmark'
+      onClick={() => setOpen(false)}
+      positive
+    />
   );
 }
 

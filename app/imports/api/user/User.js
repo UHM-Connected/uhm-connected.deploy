@@ -23,7 +23,7 @@ class UsersCollection {
       email: { type: String, unique: true },
       status: { type: String, optional: true },
       major: { type: String, optional: true },
-      department: { type: String, optional: true},
+      department: { type: String, optional: true },
       classStanding: { type: String, optional: true },
       interests: { type: String, optional: true },
       skills: { type: String, optional: true },
@@ -47,6 +47,3 @@ class UsersCollection {
  * @type {UsersCollection}
  */
 export const Users = new UsersCollection();
-
-export class User {
-}

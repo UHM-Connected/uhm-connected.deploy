@@ -88,3 +88,75 @@ body {
   font-family: 'Poppins',  sans-serif;
 }
 
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.signup-background {
+    background-color: #1a3b29;
+    height: 100vh;
+    overflow: auto;
+}
+
+.signup-text {
+    padding-top: 20%;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: "Poppins Bold";
+    font-kerning: auto;
+}
+
+.faculty-profile-background {
+    background-color: #1a3b29;
+}
+
+.student-profile-background {
+    background-color: #1a3b29;
+}
+
+.student-header {
+    padding-top: 2%;
+    background-color: #b48415;
+}
+
+.student-header-text {
+    padding-top: 5px;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: "Poppins Black";
+    font-kerning: auto;
+}
+
+.student-card {
+    background-color: #b48415;
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('app/public/themes/default/assets/fonts/Poppins-Bold.ttf') format("ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Poppins Black';
+    src: url('app/public/themes/default/assets/fonts/Poppins-Black.ttf') format("ttf");
+    font-weight: normal;
+}
+
+.facultyForm {
+    background-color: #1a3b29;
+    height: 100%;
+    width: 100%;
+}
+
+.studentForm {
+    background-color: #1a3b29;
+    height: 100%;
+    width: 100%;
+}
+

@@ -9,5 +9,10 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultProfile": [
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Admin", "lastName": "Boss", "email": "admin@foo.com", "status": "Faculty", "major": "Management", "classStanding": "Above you", "interests": "stuff", "skills": "stuff", "bio": "bio words", "education": "places", "work": "sometimes", "references": "available" },
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "John", "lastName": "Foo", "email": "john@foo.com", "status": "Student", "major": "Something", "classStanding": "Something", "interests": "Something", "skills": "Something", "bio": "Something", "education": "Something", "work": "Something", "references": "Something" }
   ]
 }

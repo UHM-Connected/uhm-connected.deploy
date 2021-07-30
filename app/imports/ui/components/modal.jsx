@@ -14,7 +14,7 @@ function ProfileModal() {
       <Modal.Header>Anne Jean Eyers <br/> Computer Engineer, Senior</Modal.Header>
       <Modal.Content image>
         <Modal.Description>
-          <Grid columns={2} >
+          <Grid columns={2} padded>
             <Grid.Row>
               <Image size='small' src="/images/annePic.png" wrapped />
               <Grid container columns={2}>
@@ -36,9 +36,10 @@ function ProfileModal() {
           <Divider hidden/>
           <Grid.Column>
             <Header dividing>
-              Goals:
+                Goals:
             </Header>
-            <p>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</p>
+            <span>Complete capstone project for graduation and find an internship where I can get hands-on experience +
+              in computer engineering.</span>
           </Grid.Column>
           <Divider hidden/>
           <Grid.Column>

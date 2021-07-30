@@ -6,7 +6,7 @@
 }
 
 .listProjectHeader {
-    font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
+    font-family: 'Poppins' , sans-serif wght300 !important; /*light font*/
     letter-spacing: 2px;
     text-transform: uppercase!important;
 }
@@ -44,6 +44,7 @@ interest{
 body {
   font-family: 'Poppins', sans-serif !important;
 }
+
 .aboutUs {
   padding-top: 50px;
 }

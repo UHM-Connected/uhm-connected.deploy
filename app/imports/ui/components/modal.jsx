@@ -38,7 +38,7 @@ function ProfileModal() {
             <Header dividing>
               Goals:
             </Header>
-            <h5>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</h5>
+            <Header as='h5'>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</Header>
           </Grid.Column>
           <Divider hidden/>
           <Grid.Column>

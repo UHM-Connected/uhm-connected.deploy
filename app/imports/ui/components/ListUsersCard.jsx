@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item, Grid, Divider, Header, Image, Label, Button } from 'semantic-ui-react';
 import modal from './modal';
+import modal2 from './modal2';
 
 class ListUsersCard extends React.Component {
 
@@ -9,7 +10,7 @@ class ListUsersCard extends React.Component {
     const aboutme = [
       ' Hi, my name is Anne Jean Eyers and I am a senior in computer engineering at UH Manoa. I am interested in software ' +
       'engineering, artificial intelligence, robotics, circuits, and machine learning. I am looking to find a faculty advisor ' +
-      'who can help me develop a project to fulfill my capstone project requirement for graduation a',
+      'who can help me develop a project to fulfill my capstone project requirement for graduation. ',
     ].join(' ');
     const aboutme2 = [
       ' Hello, my name is Al, and I am an associate professor in the Department of Information and Computer Sciences. I am interested ' +
@@ -59,7 +60,7 @@ class ListUsersCard extends React.Component {
                   <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                     About Me
                   </Header>
-                  <Button as={modal}/>
+                  <Button as={modal2}/>
                   <span>{aboutme2}</span>
                 </bio>
               </Grid.Column>

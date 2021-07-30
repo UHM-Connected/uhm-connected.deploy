@@ -1,6 +1,6 @@
 import React from 'react';
 import { Item, Grid, Divider, Header, Image, Label, Button } from 'semantic-ui-react';
-import modal from './modal';
+import ModalProject from './ModalProject';
 
 class ListProjectsCard extends React.Component {
 
@@ -19,7 +19,7 @@ class ListProjectsCard extends React.Component {
           <Item.Header>
             <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
               <Image size='huge' circular src="/images/symbol.png"/>
-              Symbol Recognition, ICS Department, Al Goridems
+              Symbol Recognition, Information and Computer Sciences, Al Goridems
             </Header>
           </Item.Header>
           <Item.Description>
@@ -28,7 +28,7 @@ class ListProjectsCard extends React.Component {
                 <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                     Project Description
                 </Header>
-                <Button as={modal}/>
+                <Button as={ModalProject}/>
                 <span>{projectdesc}</span>
               </bio>
             </Grid.Column>

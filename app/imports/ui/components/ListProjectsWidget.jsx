@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Dropdown, Grid, Item, Header, Input, Segment } from 'semantic-ui-react';
+import { Dropdown, Grid, Item, Header, Input, Segment } from 'semantic-ui-react';
 import ListProjectsCard from './ListProjectsCard';
 
 class ListProjectsWidget extends React.Component {

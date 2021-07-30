@@ -1,5 +1,6 @@
 import React from 'react';
-import { Item, Grid, Divider, Header, Image, Label, Button, Modal } from 'semantic-ui-react';
+import { Item, Grid, Divider, Header, Image, Label, Button } from 'semantic-ui-react';
+import modal from './modal';
 
 class ListUsersCard extends React.Component {
 
@@ -27,12 +28,7 @@ class ListUsersCard extends React.Component {
                 <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                     About Me
                 </Header>
-                <Modal
-                  trigger={<Button className='lmButton' compact floated='right'>Learn More</Button>}
-                  header='Anne Jean Eyers'
-                  content='test'
-                  actions={[{ key: 'connect', content: 'Connect', postive: true }]}
-                />
+                <Button as={modal}/>
                 <span>{aboutme}</span>
               </bio>
             </Grid.Column>

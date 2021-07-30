@@ -18,7 +18,7 @@ function ProfileModal() {
             <Grid.Row>
               <Image size='small' src="/images/annePic.png" wrapped />
               <Grid container columns={2}>
-                <Grid.Column padded>
+                <Grid.Column fluid>
                   <Icon name="mail"/>Email:<br/> ajeyers@hawaii.edu
                 </Grid.Column>
                 <Grid.Column>

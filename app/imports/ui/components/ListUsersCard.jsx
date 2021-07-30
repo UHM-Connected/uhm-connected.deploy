@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item, Grid, Divider, Header, Image, Label, Button } from 'semantic-ui-react';
 import modal from './modal';
+import modal2 from './modal2';
 
 class ListUsersCard extends React.Component {
 
@@ -59,7 +60,7 @@ class ListUsersCard extends React.Component {
                   <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                     About Me
                   </Header>
-                  <Button as={modal}/>
+                  <Button as={modal2}/>
                   <span>{aboutme2}</span>
                 </bio>
               </Grid.Column>

@@ -1,31 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-.listUsers{
-  margin-bottom: 10px;
-  background: #1a3b29 !important;
-  padding-bottom: 50px;
+.listProjects{
+    margin-bottom: 10px;
+    background: #1a3b29 !important;
+    padding-bottom: 50px;
 }
 
-.listProfileHeader {
-  font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
-  letter-spacing: 2px;
-  text-transform: uppercase!important;
+.listProjectHeader {
+    font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
+    letter-spacing: 2px;
+    text-transform: uppercase!important;
 }
 
 name{
-  font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
-  letter-spacing: 2px;
-  font-size: x-small;
-  text-transform: uppercase!important;
+    font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
+    letter-spacing: 2px;
+    font-size: x-small;
+    text-transform: uppercase!important;
 }
 bio{
-  color: white;
+    color: white;
 }
 
 interest{
-  color: white;
+    color: white;
 }
 
 .filter, .lmButton{
-  background: #b48415!important;
+    background: #b48415!important;
 }
-

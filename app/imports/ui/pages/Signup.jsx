@@ -6,7 +6,6 @@ import {
   Dropdown,
   Grid,
   Container,
-  Header,
   Message,
   Segment,
 } from 'semantic-ui-react';
@@ -19,10 +18,10 @@ const statusOptions = [
 ];
 
 const standingOptions = [
-  { key: 'f', text: 'Male', value: 'male' },
-  { key: 's', text: 'Female', value: 'female' },
-  { key: 'j', text: 'Other', value: 'other' },
-  { key: 'j', text: 'Other', value: 'other' },
+  { key: 'f', text: 'Freshman', value: 'freshman' },
+  { key: 's', text: 'Sophomore', value: 'sophomore' },
+  { key: 'j', text: 'Junior', value: 'junior' },
+  { key: 'sr', text: 'Senior', value: 'senior' },
 ];
 
 const titleOptions = [
@@ -40,7 +39,7 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '',
-      password: '', title: '', status: '', recentpublications: '', courses: '', error: '', redirectToReferer: false };
+      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', error: '', redirectToReferer: false };
   }
 
   state = { showForm: false }
@@ -71,10 +70,21 @@ class Signup extends React.Component {
   }
 
   form = () => <Container id="signup-page" style={padding}>
-    <Form onSubmit={this.submit} size='small'>
+    <Form onSubmit={this.submit} size='small' className="facultyForm">
       <Grid centered relaxed container>
         <Grid.Column>
           <Segment raised padded>
+            <Form.Select
+              fluid
+              required
+              label="Status"
+              id="signup-form-status"
+              readOnly
+              name="status"
+              type="status"
+              placeholder="Faculty Member"
+              value="Faculty Member"
+            />
             <Form.Group widths='equal'><Form.Select
               fluid
               required
@@ -238,14 +248,49 @@ class Signup extends React.Component {
             ) : (
               (this.state.value === 'student') ? (
                 <Container id="signup-page" style={padding}>
-                  <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-                    <Grid.Column>
-                      <Header as="h2" textAlign="center">
-                              Register your account
-                      </Header>
-                      <Form onSubmit={this.submit}>
-                        <Segment stacked>
+                  <Form onSubmit={this.submit} size='small' className="studentForm">
+                    <Grid centered relaxed container>
+                      <Grid.Column>
+                        <Segment raised padded>
+                          <Form.Select
+                            fluid
+                            required
+                            label="Status"
+                            id="signup-form-status"
+                            readOnly
+                            name="status"
+                            type="status"
+                            placeholder="Student"
+                            value="Faculty Member"
+                          />
+                          <Form.Group widths='equal'>
+                            <Form.Input
+                              fluid
+                              required
+                              label="First Name"
+                              id="signup-form-firstname"
+                              icon="user"
+                              iconPosition="left"
+                              name="firstname"
+                              placeholder="First Name"
+                              type="firstname"
+                              onChange={this.handleChange}
+                            />
+                            <Form.Input
+                              fluid
+                              required
+                              label="Last Name"
+                              id="signup-form-lastname"
+                              icon="user"
+                              iconPosition="left"
+                              name="lastname"
+                              placeholder="Last Name"
+                              type="lastname"
+                              onChange={this.handleChange}
+                            /></Form.Group>
                           <Form.Input
+                            fluid
+                            required
                             label="Email"
                             id="signup-form-email"
                             icon="envelope"
@@ -256,117 +301,69 @@ class Signup extends React.Component {
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            label="First Name"
-                            id="signup-form-firstname"
-                            icon="user"
-                            iconPosition="left"
-                            name="firstname"
-                            placeholder="First Name"
-                            type="firstname"
-                            onChange={this.handleChange}
-                          />
-                          <Form.Input
-                            label="Last Name"
-                            id="signup-form-lastname"
-                            icon="user"
-                            iconPosition="left"
-                            name="lastname"
-                            placeholder="Last Name"
-                            type="lastname"
-                            onChange={this.handleChange}
-                          />
-                          <Form.Input
+                            fluid
                             label="Profile Picture"
                             id="signup-form-profilepic"
                             icon="camera"
                             iconPosition="left"
                             name="profilepic"
-                            placeholder="Profile Picture"
+                            placeholder="URL of image"
                             type="profilepic"
-                            onChange={this.handleChange}
-                          />
+                            onChange={this.handleChange}/>
                           <Form.Input
+                            required
                             label="Major"
                             id="signup-form-major"
-                            icon="camera"
-                            iconPosition="left"
                             name="major"
-                            placeholder="Major or Department"
+                            placeholder="Major"
                             type="major"
                             onChange={this.handleChange}
                           />
+                          <Form.Input
+                            label="Interests"
+                            id="signup-form-interests"
+                            name="interests"
+                            placeholder="What are your research interests?"
+                            type="interests"
+                            onChange={this.handleChange}
+                          />
                           <Form.Select
+                            required
                             label="Class Standing"
                             id="signup-form-standing"
-                            icon="camera"
-                            iconPosition="left"
                             name="standing"
                             options={standingOptions}
                             placeholder="What year are you in?"
                             type="standing"
                             onChange={this.handleChange}
                           />
-                          <Form.Input
-                            label="Interests"
-                            id="signup-form-interests"
-                            icon="camera"
-                            iconPosition="left"
-                            name="interests"
-                            placeholder="What are you interested in?"
-                            type="interests"
-                            onChange={this.handleChange}
-                          />
-                          <Form.Input
-                            label="Skills"
-                            id="signup-form-skills"
-                            icon="camera"
-                            iconPosition="left"
-                            name="skills"
-                            placeholder="What are your areas of expertise?"
-                            type="skills"
-                            onChange={this.handleChange}
-                          />
-                          <Form.Input
-                            label="Bio"
+                          <Form.TextArea
+                            label="About"
                             id="signup-form-bio"
-                            icon="comment"
-                            iconPosition="left"
                             name="bio"
-                            placeholder="Tell us a little bit about yourself (favorite movies, genres, etc.)"
+                            placeholder="Tell us more about you . . ."
                             type="bio"
                             onChange={this.handleChange}
                           />
                           <Form.Input
+                            required
                             label="Education"
                             id="signup-form-education"
-                            icon="camera"
-                            iconPosition="left"
                             name="education"
-                            placeholder="Where and what have you studied?"
+                            placeholder="When will you graduate and with what degree?"
                             type="education"
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            label="Work"
+                            label="Work Experience"
                             id="signup-form-work"
-                            icon="camera"
-                            iconPosition="left"
                             name="work"
-                            placeholder="Work Experience"
-                            type="Work"
+                            placeholder="Where have you worked before?"
+                            type="work"
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            label="References"
-                            id="signup-form-references"
-                            icon="camera"
-                            iconPosition="left"
-                            name="references"
-                            placeholder="References"
-                            type="references"
-                            onChange={this.handleChange}
-                          />
-                          <Form.Input
+                            required
                             label="Password"
                             id="signup-form-password"
                             icon="lock"
@@ -378,21 +375,21 @@ class Signup extends React.Component {
                           />
                           <Form.Button id="signup-form-submit" content="Submit"/>
                         </Segment>
-                      </Form>
-                      <Message>
-                              Already have an account? Login <Link to="/signin">here</Link>
-                      </Message>
-                      {this.state.error === '' ? (
-                        ''
-                      ) : (
-                        <Message
-                          error
-                          header="Registration was not successful"
-                          content={this.state.error}
-                        />
-                      )}
-                    </Grid.Column>
-                  </Grid>
+                      </Grid.Column>
+                    </Grid>
+                  </Form>
+                  <Message>
+                          Already have an account? Login <Link to="/signin">here</Link>
+                  </Message>
+                  {this.state.error === '' ? (
+                    ''
+                  ) : (
+                    <Message
+                      error
+                      header="Registration was not successful"
+                      content={this.state.error}
+                    />
+                  )}
                 </Container>
 
               ) :

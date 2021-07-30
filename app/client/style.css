@@ -11,6 +11,18 @@
     text-transform: uppercase!important;
 }
 
+.listUsers{
+    margin-bottom: 10px;
+    background: #1a3b29 !important;
+    padding-bottom: 50px;
+}
+
+.listProfileHeader {
+    font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
+    letter-spacing: 2px;
+    text-transform: uppercase!important;
+}
+
 name{
     font-family: 'Poppins', sans-serif wght300 !important; /*light font*/
     letter-spacing: 2px;

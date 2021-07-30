@@ -18,7 +18,7 @@ class ListProjectsCard extends React.Component {
         <Item.Content>
           <Item.Header>
             <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
-              <Image size='huge' circular src="/images/symbol.jpg"/>
+              <Image size='huge' circular src="/images/symbol.png"/>
               Symbol Recognition, ICS Department, Al Goridems
             </Header>
           </Item.Header>

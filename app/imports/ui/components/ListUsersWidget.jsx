@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Dropdown, Grid, Item, Header, Input, Segment } from 'semantic-ui-react';
+import { Dropdown, Grid, Item, Header, Input, Segment } from 'semantic-ui-react';
 import ListUsersCard from './ListUsersCard';
 
 class ListUsersWidget extends React.Component {

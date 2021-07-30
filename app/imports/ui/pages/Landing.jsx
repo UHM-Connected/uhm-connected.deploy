@@ -1,22 +1,22 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, GridRow, Image } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-      <Grid id='landing-page' verticalAlign='middle' textAlign='center' container>
-
-        <Grid.Column width={4}>
-          <Image size='small' circular src="/images/meteor-logo.png"/>
-        </Grid.Column>
-
-        <Grid.Column width={8}>
-          <h1>Welcome to this template</h1>
-          <p>Now get to work and modify this app!</p>
-        </Grid.Column>
-
-      </Grid>
+      <div style={{fontFamily:'Poppins'}}>
+        <grid>
+          <row>
+           <h1 style={{color: "white", fontSize:100, textAlign: 'center', fontFamily:'Poppins' }}>Welcome to UHM Connected</h1>
+          </row>
+          <row style={{display: 'flex', justifyContent: 'center'}}>
+            <a href="/#/user">
+              <button style={{backgroundColor: "#b48415", color: "white", fontSize:50, fontFamily:'Poppins'}}>Get Connected</button>
+            </a>
+          </row>
+        </grid> 
+      </div>
     );
   }
 }

@@ -10,7 +10,7 @@ class ListUsersCard extends React.Component {
     const aboutme = [
       ' Hi, my name is Anne Jean Eyers and I am a senior in computer engineering at UH Manoa. I am interested in software ' +
       'engineering, artificial intelligence, robotics, circuits, and machine learning. I am looking to find a faculty advisor ' +
-      'who can help me develop a project to fulfill my capstone project requirement for graduation a',
+      'who can help me develop a project to fulfill my capstone project requirement for graduation. ',
     ].join(' ');
     const aboutme2 = [
       ' Hello, my name is Al, and I am an associate professor in the Department of Information and Computer Sciences. I am interested ' +

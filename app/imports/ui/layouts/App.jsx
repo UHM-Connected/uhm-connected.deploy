@@ -19,6 +19,7 @@ import ListUsers from '../pages/ListUsers';
 import AboutUs from '../pages/AboutUs';
 import ListProjects from '../pages/ListProjects';
 import UserPage from '../pages/UserPage';
+import CreateNewProject from '../pages/CreateNewProject';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
             <Route path="/listusers" component={ListUsers}/>
             <Route path="/aboutus" component={AboutUs}/>
             <Route path="/listprojects" component={ListProjects}/>
+            <Route path="/createprojects" component={CreateNewProject}/>
             <ProtectedRoute path="/user" component={UserPage}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>

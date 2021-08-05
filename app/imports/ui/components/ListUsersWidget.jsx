@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, Grid, Item, Header, Input, Segment } from 'semantic-ui-react';
+import { Dropdown, Grid, Item, Header, Input, Segment, Divider } from 'semantic-ui-react';
 import ListUsersCard from './ListUsersCard';
 
 class ListUsersWidget extends React.Component {
@@ -10,6 +10,16 @@ class ListUsersWidget extends React.Component {
       top: '6.5rem',
     };
 
+    const department = [
+      { key: 'ics', value: 'ics', text: 'ICS' },
+      { key: 'ce', value: 'ce', text: 'Computer Engineering' },
+    ];
+
+    const interests = [
+      { key: 'ro', value: 'ro', text: 'Robotics' },
+      { key: 'ml', value: 'ml', text: ' Machine Learning' },
+    ];
+
     return (
       <div className="listUsers">
         <Grid container doubling relaxed stackable>
@@ -17,6 +27,18 @@ class ListUsersWidget extends React.Component {
             <Header className='listProfileHeader' size={'large'} inverted style={{ paddingTop: '2rem' }}>
                 All Profiles
             </Header>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={8}>
+              <Divider horizontal>
+                <Header as='h1' textAlign='right' inverted>Student</Header>
+              </Divider>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <Divider horizontal>
+                <Header as='h1' textAlign='left' inverted>Faculty</Header>
+              </Divider>
+            </Grid.Column>
           </Grid.Row>
           <Grid.Column width={4}>
 
@@ -39,15 +61,9 @@ class ListUsersWidget extends React.Component {
                   <Dropdown
                     placeholder='Department'
                     fluid
+                    search
                     selection
-                  />
-                </div>
-                <div style={{ paddingTop: '2rem' }}>
-                  <Header>Users</Header>
-                  <Dropdown
-                    placeholder='Student/Faculty'
-                    fluid
-                    selection
+                    options={department}
                   />
                 </div>
                 <div style={{ paddingTop: '2rem' }}>
@@ -55,7 +71,9 @@ class ListUsersWidget extends React.Component {
                   <Dropdown
                     placeholder='Interests'
                     fluid
+                    search
                     selection
+                    options={interests}
                   />
                 </div>
               </div>

@@ -14,5 +14,10 @@
   "defaultProfile": [
     { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Admin", "lastName": "Boss", "email": "admin@foo.com", "status": "Faculty", "major": "Management", "classStanding": "Above you", "interests": "stuff", "skills": "stuff", "bio": "bio words", "education": "places", "work": "sometimes", "references": "available" },
     { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "John", "lastName": "Foo", "email": "john@foo.com", "status": "Student", "major": "Something", "classStanding": "Something", "interests": "Something", "skills": "Something", "bio": "Something", "education": "Something", "work": "Something", "references": "Something" }
+  ],
+
+  "defaultProjects": [
+    { "projectName": "Symbol Recognition", "faculty": "Al Goridems", "department": "Information & Computer Sciences", "goal": "A goal", "studentRequirements": "ICS311 & ICS314", "description":" The project to be pursued will be partially research-based and partially application-based. The former will take up the majority of the project timespan, while the latter will be focused on more thoroughly after extensive research is completed. The overall desire for the project is to have a working computer extension that allows a computing device created within the last five years to be able to detect symbols and patterns and provide accurate, descriptive analysis from various Microsoft files.", "researchArea": ["Algorithms", "Operating Systems", "Artificial Intelligence"], "email": "algor@hawaii.edu", "owner": "algor@hawaii.edu"}
   ]
 }
+

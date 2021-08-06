@@ -57,7 +57,7 @@ class ListUsersWidget extends React.Component {
                   fluid
                 />
                 <div style={{ paddingTop: '2rem' }}>
-                  <Header>Department</Header>
+                  <Header>Department:</Header>
                   <Dropdown
                     placeholder='Department'
                     fluid
@@ -67,7 +67,7 @@ class ListUsersWidget extends React.Component {
                   />
                 </div>
                 <div style={{ paddingTop: '2rem' }}>
-                  <Header>Interests</Header>
+                  <Header>Interests:</Header>
                   <Dropdown
                     placeholder='Interests'
                     fluid

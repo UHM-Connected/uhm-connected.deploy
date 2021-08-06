@@ -4,11 +4,11 @@ import { Grid, Image, Header, List, Icon } from 'semantic-ui-react';
 // Image citation: https://www.hawaii.edu/news/2020/09/11/provost-message-planning-for-post-pandemic/
 // Logo citation: https://www6.pbrc.hawaii.edu/logos/
 /** A simple static component to render some text for the landing page. */
-class AboutUs extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <div className="aboutUs">
-        <Header as='h1' inverted size='huge' textAlign="center" className="aboutUs-header">ABOUT US</Header>
+        <Header as='h1' inverted size='huge' textAlign="center" className="aboutUs-header">ABOUT</Header>
         <Grid container centered stackable verticalAlign="middle" columns='equal' className="aboutUs-background">
           <Grid.Row width={8}>
           </Grid.Row>
@@ -43,25 +43,28 @@ class AboutUs extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        <Header as='h2' inverted size='huge' textAlign="center" className="aboutUs-header">How to Get Connected</Header>
         <Grid container row={1} verticalAlign="middle">
           <Grid.Row columns={2}>
             <Grid.Column>
               <div className="aboutUs-background-body2">
-                <Header as='h2' inverted>Students - What Can You Do? <Icon color='white' name='student' size='huge' floated='right'/></Header>
+                <Header as='h2' inverted>Students - What Can You Do?<Icon color='white' name='student' size='huge' floated='right'/></Header>
                 <List as='ul' className="aboutUs-list">
-                  <List.Item as='li'>Share your resume & relevant experiences.</List.Item>
-                  <List.Item as='li'>Find professors to help fulfill your thesis and capstone requirements.</List.Item>
-                  <List.Item as='li'>Expand your work experience by finding others to develop projects with.</List.Item>
+                  <List.Item as='li'><b>Share your contact information</b>- Allow other users to reach out to you by sharing your email, website, and GitHub profile.</List.Item>
+                  <List.Item as='li'><b>Share your experiences</b>- Create a profile and share your resume and projects.</List.Item>
+                  <List.Item as='li'><b>Find mentors</b>- Search for faculty users and reach out to their contact info who can help fulfill your graduation experiences.</List.Item>
+                  <List.Item as='li'><b>Expand your project portfolio</b>- Find other users and reach out to their contact info to work together in order to develop new projects.</List.Item>
                 </List>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div className="aboutUs-background-body2">
-                <Header as='h2' inverted padded>Faculty - What Can You Do? <Icon color='white' name='file' size='huge' floated='right'/></Header>
+                <Header as='h2' inverted padded>Faculty - What Can You Do?<Icon color='white' name='file' size='huge' floated='right'/></Header>
                 <List as='ul' className="aboutUs-list">
-                  <List.Item as='li'>Aid students in fulfilling their thesis and capstone projects.</List.Item>
-                  <List.Item as='li'>Recruit students to help conduct new research.</List.Item>
-                  <List.Item as='li'>Promote your research for members of the UH Community.</List.Item>
+                  <List.Item as='li'><b>Share your contacts information</b>- Allow other users to reach out to you by sharing your email, website, and GitHub profile.</List.Item>
+                  <List.Item as='li'><b>Promote your research projects</b>- Create project listings for other users to see.</List.Item>
+                  <List.Item as='li'><b>Become a mentor</b>- Explore user profiles and contact students in need of help or allow them to reach out to you.</List.Item>
+                  <List.Item as='li'><b>Collaborate with others</b>- Reach out to other users of other research areas to propose new research ideas.</List.Item>
                 </List>
               </div>
             </Grid.Column>
@@ -73,4 +76,4 @@ class AboutUs extends React.Component {
   }
 }
 
-export default AboutUs;
+export default About;

@@ -139,17 +139,12 @@ h5 {
 
 .student-header {
     padding-top: 2%;
-    background-color: #b48415;
 }
 
-.student-header-text {
-    padding-top: 5px;
-    color: white;
-    font-weight: bolder;
-    font-size: 30px;
-    font-family: "Poppins Black";
-    font-kerning: auto;
+.faculty-header {
+    padding-top: 2%;
 }
+
 
 .student-card {
     background-color: #b48415;

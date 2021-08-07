@@ -139,9 +139,36 @@ class Signup extends React.Component {
               icon="camera"
               iconPosition="left"
               name="profilepic"
-              placeholder="URL of image"
+              placeholder="Right-click on an online image and copy the URL. Input that URL here."
               type="profilepic"
               onChange={this.handleChange}/>
+            <Form.Input
+              required
+              label="Github"
+              id="signup-form-github"
+              name="github"
+              placeholder="URL to your Github"
+              type="github"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              required
+              label="Website"
+              id="signup-form-website"
+              name="website"
+              placeholder="URL to your website"
+              type="website"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              required
+              label="LinkedIn"
+              id="signup-form-linkedin"
+              name="linkedin"
+              placeholder="ULR to your LinkedIn"
+              type="linkedin"
+              onChange={this.handleChange}
+            />
             <Form.Input
               label="Department"
               id="signup-form-department"
@@ -307,7 +334,7 @@ class Signup extends React.Component {
                             icon="camera"
                             iconPosition="left"
                             name="profilepic"
-                            placeholder="URL of image"
+                            placeholder="Right-click on an online image and copy the URL. Input that URL here."
                             type="profilepic"
                             onChange={this.handleChange}/>
                           <Form.Input
@@ -317,6 +344,33 @@ class Signup extends React.Component {
                             name="major"
                             placeholder="Major"
                             type="major"
+                            onChange={this.handleChange}
+                          />
+                          <Form.Input
+                            required
+                            label="Github"
+                            id="signup-form-github"
+                            name="github"
+                            placeholder="URL to your Github"
+                            type="github"
+                            onChange={this.handleChange}
+                          />
+                          <Form.Input
+                            required
+                            label="Website"
+                            id="signup-form-website"
+                            name="website"
+                            placeholder="URL to your website"
+                            type="website"
+                            onChange={this.handleChange}
+                          />
+                          <Form.Input
+                            required
+                            label="LinkedIn"
+                            id="signup-form-linkedin"
+                            name="linkedin"
+                            placeholder="linkedin"
+                            type="linkedin"
                             onChange={this.handleChange}
                           />
                           <Form.Input

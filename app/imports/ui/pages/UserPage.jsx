@@ -153,14 +153,15 @@ class UserPage extends React.Component {
                 </Grid.Column>
               </Grid.Row>
               <Divider/>
-              <Grid.Row>
-                <Grid.Column>
-                  <Header as='h3' >About</Header>
-                  <p> {this.props.user.bio} </p>
-                </Grid.Column>
-              </Grid.Row>
               <Divider/>
             </Grid>
+            <Grid.Row>
+              <Grid.Column>
+                <Header as='h3' >About</Header>
+                <p> {this.props.user.bio} </p>
+              </Grid.Column>
+            </Grid.Row>
+            <Divider/>
             <Grid.Row>
               <Button
                 floated='left'

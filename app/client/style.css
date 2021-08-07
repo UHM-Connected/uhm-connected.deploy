@@ -177,4 +177,19 @@ h5 {
 .projectForm {
   background-color: #b48415!important;
   color: white!important;
+
+.loading {
+  position: relative;
+  text-align: center;
+}
+
+/* Bottom right text */
+.textblock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#b48415;
+  text-align: center;
+  border-radius: 25px;
 }

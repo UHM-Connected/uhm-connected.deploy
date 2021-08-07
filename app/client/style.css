@@ -175,8 +175,9 @@ h5 {
 }
 
 .projectForm {
-  background-color: #b48415!important;
-  color: white!important;
+  background-color: #b48415 !important;
+  color: white !important;
+}
 
 .loading {
   position: relative;

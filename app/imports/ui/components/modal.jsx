@@ -54,6 +54,10 @@ function ProfileModal() {
               <List.Item>ITS Help Desk Student Assistant (Oct. 2019-present)</List.Item>
             </List>
           </Grid.Column>
+          <Divider hidden/>
+          <Grid.Column>
+            <Header dividing size="small">Recent Publications</Header>
+          </Grid.Column>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>

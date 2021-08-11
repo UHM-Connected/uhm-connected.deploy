@@ -20,6 +20,7 @@ import About from '../pages/About';
 import ListProjects from '../pages/ListProjects';
 import UserPage from '../pages/UserPage';
 import CreateNewProject from '../pages/CreateNewProject';
+import ProfileEditForm from '../pages/ProfileEditForm';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
             <ProtectedRoute path="/user" component={UserPage}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
+            <ProtectedRoute path="/profile/edit/:_id" component={ProfileEditForm}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>

@@ -145,6 +145,41 @@ h5 {
     padding-top: 2%;
 }
 
+.faculty-header-text {
+    text-align: left;
+    text-align: left;
+    padding-left: 15px;
+    font-size: large;
+    font-family: 'Poppins', sans-serif wght300 !important;
+}
+
+.student-header-text {
+    text-align: left;
+    padding-left: 2%;
+    font-size: large;
+    font-family: 'Poppins', sans-serif wght300 !important;
+}
+
+.profile-columns {
+    text-align: left;
+}
+
+.about-section {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.goal-section {
+    text-align: left;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.previous-section {
+    text-align: left;
+    padding-left: 15px;
+}
+
 
 .student-card {
     background-color: #b48415;

@@ -27,6 +27,7 @@ class ProjectsCollection {
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
+    this.listPublicationName = `${this.name}.publication.list`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }

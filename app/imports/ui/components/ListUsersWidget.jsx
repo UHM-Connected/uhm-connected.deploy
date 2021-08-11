@@ -1,7 +1,10 @@
 import React from 'react';
 import { Dropdown, Grid, Item, Header, Input, Segment, Divider } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import ListUsersCard from './ListUsersCard';
 
+// TRANSFERRED TO ListUsers.jsx
 class ListUsersWidget extends React.Component {
   render() {
     const sticky = {
@@ -81,7 +84,7 @@ class ListUsersWidget extends React.Component {
           </Grid.Column>
           <Grid.Column width={12}>
             <Item.Group divided>
-              <ListUsersCard/>
+              {this.props.user.map((user, index) => <ListUsersCard key={index} user={user}/>)}
             </Item.Group>
           </Grid.Column>
         </Grid>
@@ -89,4 +92,9 @@ class ListUsersWidget extends React.Component {
     );
   }
 }
-export default ListUsersWidget;
+
+ListUsersWidget.propTypes = {
+  user: PropTypes.object.isRequired,
+};
+
+export default withRouter(ListUsersWidget);

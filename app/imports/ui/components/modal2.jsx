@@ -51,10 +51,7 @@ function ProfileModal() {
           <Divider hidden/>
           <Grid.Column>
             <Header dividing size="small">Courses Taught</Header>
-            <List bulleted>
-              <List.Item>ICS 311: Algorithms</List.Item>
-              <List.Item>ICS 332: Operating Systems</List.Item>
-              <List.Item>ICS 361: Introduction to Artificial Intelligence Programming</List.Item>            </List>
+            <List bulleted items={this.props.user.courses}/>
           </Grid.Column>
         </Modal.Description>
       </Modal.Content>

@@ -22,7 +22,11 @@ Meteor.publish(Users.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Projects.userPublicationName, () => Projects.collection.find());
+// Publishing for list projects.
+Meteor.publish(Projects.listPublicationName, () => Projects.collection.find());
+
+// Publishing for list users.
+Meteor.publish(Users.listPublicationName, () => Users.collection.find());
 
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.

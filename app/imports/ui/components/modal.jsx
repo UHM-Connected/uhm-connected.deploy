@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 
 function ProfileModal() {
   const [open, setOpen] = React.useState(false);
@@ -11,7 +13,7 @@ function ProfileModal() {
       open={open}
       trigger={<Button className='lmButton' compact floated='right'>Learn More</Button>}
     >
-      <Modal.Header>Anne Jean Eyers <br/> Computer Engineer, Senior</Modal.Header>
+      <Modal.Header>{this.props.user.firstName} {this.props.user.lastName} <br/> {this.props.user.major}, {this.props.user.classStanding}</Modal.Header>
       <Modal.Content image>
         <Modal.Description>
           <Grid columns={2} padded>
@@ -19,16 +21,16 @@ function ProfileModal() {
               <Image size='small' src="/images/annePic.png" wrapped />
               <Grid container columns={2}>
                 <Grid.Column width={6}>
-                  <Icon name="mail"/>Email:<br/> ajeyers@hawaii.edu
+                  <Icon name="mail"/>Email:<br/> {this.props.user.email}
                 </Grid.Column>
                 <Grid.Column width={6}>
-                  <Icon name="linkedin"/>LinkedIn:<br/> ajeyers@hawaii.edu
+                  <Icon name="linkedin"/>LinkedIn:<br/> {this.props.user.linkedIn}
                 </Grid.Column>
                 <Grid.Column width={6}>
-                  <Icon name="github"/>GitHub:<br/> ajeyers@hawaii.edu
+                  <Icon name="github"/>GitHub:<br/> {this.props.user.github}
                 </Grid.Column>
                 <Grid.Column width={6}>
-                  <Icon name="globe"/>Website:<br/> ajeyers@hawaii.edu
+                  <Icon name="globe"/>Website:<br/> {this.props.user.email}
                 </Grid.Column>
               </Grid>
             </Grid.Row>
@@ -38,25 +40,28 @@ function ProfileModal() {
             <Header dividing>
               Goals:
             </Header>
-            <Header as='h5'>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</Header>
+            <Header as='h5'>{this.props.user.goal}</Header>
           </Grid.Column>
           <Divider hidden/>
           <Grid.Column>
             <Header dividing size="small">Previous Experiences</Header>
             <List bulleted>
-              <List.Item>EE 160: Programming for Engineers </List.Item>
+              <List.Item>{this.props.user.courses}</List.Item>
             </List>
           </Grid.Column>
           <Divider hidden/>
           <Grid.Column>
             <Header dividing size="small">Work Experience</Header>
             <List bulleted>
-              <List.Item>ITS Help Desk Student Assistant (Oct. 2019-present)</List.Item>
+              <List.Item>{this.props.user.work}</List.Item>
             </List>
           </Grid.Column>
           <Divider hidden/>
           <Grid.Column>
             <Header dividing size="small">Recent Publications</Header>
+            <List bulleted>
+              <List.Item>{this.props.user.recentPublications}</List.Item>
+            </List>
           </Grid.Column>
         </Modal.Description>
       </Modal.Content>
@@ -73,4 +78,8 @@ function ProfileModal() {
   );
 }
 
-export default ProfileModal;
+ProfileModal.propTypes = {
+  user: PropTypes.object.isRequired,
+};
+
+export default withRouter(ProfileModal);

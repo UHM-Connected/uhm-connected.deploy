@@ -37,7 +37,8 @@ class UsersCollection {
       previousProjects: { type: Array, optional: true },
       'previousProjects.$': { type: String, optional: true },
       recentPublications: { type: String, optional: true },
-      courses: { type: String, optional: true },
+      courses: { type: Array, optional: true },
+      'courses.$': { type: String, optional: true },
       education: { type: String, optional: true },
       work: { type: String, optional: true },
       references: { type: String, optional: true },
@@ -46,6 +47,7 @@ class UsersCollection {
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
+    this.listPublicationName = `${this.name}.publication.list`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }

@@ -21,68 +21,68 @@ class ListProjectsWidget extends React.Component {
     ];
 
     return (
-        <div className="listProjects">
-          <Grid container doubling relaxed stackable>
-            <Grid.Row centered>
-              <Header className='listProfileHeader' size={'large'} inverted style={{ paddingTop: '2rem' }}>
+      <div className="listProjects">
+        <Grid container doubling relaxed stackable>
+          <Grid.Row centered>
+            <Header className='listProfileHeader' size={'large'} inverted style={{ paddingTop: '2rem' }}>
                 All Projects
-              </Header>
-            </Grid.Row>
-            <Grid.Column width={4}>
+            </Header>
+          </Grid.Row>
+          <Grid.Column width={4}>
 
-              <Segment className='filter' style={sticky}>
-                <div style={{ paddingTop: '2rem' }}>
-                  <Header>
-                    <Header.Content>
+            <Segment className='filter' style={sticky}>
+              <div style={{ paddingTop: '2rem' }}>
+                <Header>
+                  <Header.Content>
                       Total Projects:
-                    </Header.Content>
-                  </Header>
+                  </Header.Content>
+                </Header>
+              </div>
+              <div style={{ paddingTop: '2rem' }}>
+                <Input icon='search'
+                  iconPosition='left'
+                  placeholder='Search by name...'
+                  fluid
+                />
+                <div style={{ paddingTop: '2rem' }}>
+                  <Header>Department:</Header>
+                  <Dropdown
+                    placeholder='Department'
+                    fluid
+                    search
+                    selection
+                    options={department}
+                  />
                 </div>
                 <div style={{ paddingTop: '2rem' }}>
-                  <Input icon='search'
-                         iconPosition='left'
-                         placeholder='Search by name...'
-                         fluid
+                  <Header>Research:</Header>
+                  <Dropdown
+                    placeholder='Research'
+                    fluid
+                    search
+                    selection
+                    options={research}
                   />
-                  <div style={{ paddingTop: '2rem' }}>
-                    <Header>Department:</Header>
-                    <Dropdown
-                        placeholder='Department'
-                        fluid
-                        search
-                        selection
-                        options={department}
-                    />
-                  </div>
-                  <div style={{ paddingTop: '2rem' }}>
-                    <Header>Research:</Header>
-                    <Dropdown
-                        placeholder='Research'
-                        fluid
-                        search
-                        selection
-                        options={research}
-                    />
-                  </div>
-                  <div style={{ paddingTop: '2rem' }}>
-                    <Header>Faculty Name:</Header>
-                    <Input icon='search'
-                           iconPosition='left'
-                           placeholder='Search by Faculty'
-                           fluid
-                    />
-                  </div>
                 </div>
+                <div style={{ paddingTop: '2rem' }}>
+                  <Header>Faculty Name:</Header>
+                  <Input icon='search'
+                    iconPosition='left'
+                    placeholder='Search by Faculty'
+                    fluid
+                  />
+                </div>
+              </div>
 
-              </Segment>
-            </Grid.Column>
-            <Grid.Column width={12}>
-              <Item.Group divided>
-                <ListProjectsCard/>
-              </Item.Group>
-            </Grid.Column>
-          </Grid>
-        </div>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={12}>
+            <Item.Group divided>
+              <ListProjectsCard/>
+            </Item.Group>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }

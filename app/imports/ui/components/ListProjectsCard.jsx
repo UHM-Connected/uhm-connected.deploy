@@ -14,34 +14,34 @@ class ListProjectsCard extends React.Component {
 
     return (
 
-        <Item style={{ padding: '0rem 1.5rem 0.5rem 1.5rem' }}>
-          <Grid.Column>
-            <Item.Content>
-              <Item.Header>
-                <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
-                  <Image size='huge' circular src="/images/symbol.png"/>
+      <Item style={{ padding: '0rem 1.5rem 0.5rem 1.5rem' }}>
+        <Grid.Column>
+          <Item.Content>
+            <Item.Header>
+              <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
+                <Image size='huge' circular src="/images/symbol.png"/>
                   Symbol Recognition, Information and Computer Sciences
-                </Header>
-              </Item.Header>
-              <Item.Description>
-                <Grid.Column>
-                  <bio>
-                    <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
+              </Header>
+            </Item.Header>
+            <Item.Description>
+              <Grid.Column>
+                <bio>
+                  <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                       Project Description
-                    </Header>
-                    <Button as={ModalProject}/>
-                    <span>{projectdesc}</span>
-                  </bio>
-                </Grid.Column>
-                <Divider hidden>
-                  <Label size='tiny'>Algorithms</Label>
-                  <Label size='tiny'>Operating Systems</Label>
-                  <Label size='tiny'>Artificial Intelligence</Label>
-                </Divider>
-              </Item.Description>
-            </Item.Content>
-          </Grid.Column>
-        </Item>
+                  </Header>
+                  <Button as={ModalProject}/>
+                  <span>{projectdesc}</span>
+                </bio>
+              </Grid.Column>
+              <Divider hidden>
+                <Label size='tiny'>Algorithms</Label>
+                <Label size='tiny'>Operating Systems</Label>
+                <Label size='tiny'>Artificial Intelligence</Label>
+              </Divider>
+            </Item.Description>
+          </Item.Content>
+        </Grid.Column>
+      </Item>
     );
   }
 }

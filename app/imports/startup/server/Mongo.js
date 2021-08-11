@@ -34,7 +34,7 @@ if (Projects.collection.find().count() === 0) {
 
 // Initialize the database with a default profile document.
 function addProfiles(user) {
-  console.log(`  Adding: ${user.email})`);
+  console.log(`  Adding: ${user.email} (${user.firstName} ${user.lastName})`);
   Users.collection.insert(user);
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 function ProfileModal() {
   const [open, setOpen] = React.useState(false);
@@ -65,6 +66,7 @@ function ProfileModal() {
           icon='checkmark'
           onClick={() => setOpen(false)}
           positive
+          as={NavLink} activeClassName="active" exact to="/ConnectForm"
         />
       </Modal.Actions>
     </Modal>

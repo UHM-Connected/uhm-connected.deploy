@@ -18,6 +18,12 @@
 
   "defaultProjects": [
     { "projectName": "Symbol Recognition", "faculty": "Al Goridems", "department": "Information & Computer Sciences", "goal": "A goal", "studentRequirements": "ICS311 & ICS314", "description":" The project to be pursued will be partially research-based and partially application-based. The former will take up the majority of the project timespan, while the latter will be focused on more thoroughly after extensive research is completed. The overall desire for the project is to have a working computer extension that allows a computing device created within the last five years to be able to detect symbols and patterns and provide accurate, descriptive analysis from various Microsoft files.", "researchArea": ["Algorithms", "Operating Systems", "Artificial Intelligence"], "email": "algor@hawaii.edu", "owner": "algor@hawaii.edu"}
+  ],
+  "defaultVolunteers": [
+    {"firstName":  "Maegan", "lastName": "Chow", "email": "maegan@foo.com", "phoneNumber": "123-4567-8910", "status": "Not Interested" },
+    {"firstName":  "Nhan", "lastName": "Bui", "email": "nhan@foo.com", "phoneNumber": "123-4567-8910", "status": "Not Interested" },
+    {"firstName":  "Germaine", "lastName": "Juan", "email": "germaine@foo.com", "phoneNumber": "123-4567-8910", "status": "Interested" },
+    {"firstName":  "Kha", "lastName": "Bui", "email": "kha@foo.com", "phoneNumber": "123-4567-8910", "status": "Pending Review" }
   ]
 }
 

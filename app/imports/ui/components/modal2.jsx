@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
+import { Button, Header, Image, Modal, Grid, Icon, Divider } from 'semantic-ui-react';
 
 function ProfileModal() {
   const [open, setOpen] = React.useState(false);
@@ -33,28 +33,51 @@ function ProfileModal() {
               </Grid>
             </Grid.Row>
           </Grid>
-          <Divider hidden/>
+          <Divider/>
+          <Grid columns={4} padded>
+            <Grid.Row>
+              <Grid.Column>
+                <Header as='h3' >Role</Header>
+                <p>test</p>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as='h3' >Interests</Header>
+                <p>test</p>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as='h3' >Education</Header>
+                <p>test</p>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <Header as='h3' >Status</Header>
+                <p>Student</p>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as='h3' >Recent Publications</Header>
+                <p>test</p>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as='h3' >Courses Taught</Header>
+                <p>test</p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          <Divider/>
           <Grid.Column>
-            <Header dividing>
-              Goals:
+            <Header>
+              Goals
             </Header>
-            <h5>I am looking for a hard-working student, with a background in computing, to assist me in my symbol recognition project.</h5>
+            <Header as='h5'>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</Header>
           </Grid.Column>
-          <Divider hidden/>
+          <Divider/>
           <Grid.Column>
-            <Header dividing size="small">Previous Projects</Header>
-            <List bulleted>
-              <List.Item>Binary Search Tree Research</List.Item>
-              <List.Item>Operating Systems Kernel</List.Item>
-            </List>
+            <Header>About</Header>
           </Grid.Column>
-          <Divider hidden/>
+          <Divider/>
           <Grid.Column>
-            <Header dividing size="small">Courses Taught</Header>
-            <List bulleted>
-              <List.Item>ICS 311: Algorithms</List.Item>
-              <List.Item>ICS 332: Operating Systems</List.Item>
-              <List.Item>ICS 361: Introduction to Artificial Intelligence Programming</List.Item>            </List>
+            <Header>Previous Projects</Header>
           </Grid.Column>
         </Modal.Description>
       </Modal.Content>

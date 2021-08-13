@@ -36,17 +36,17 @@ class NavBar extends React.Component {
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
-            <Dropdown id="login-dropdown" text={this.props.currentUser} pointing="top right" icon={'user'}>
+            <Dropdown id="login-dropdown" text="Sign In/Sign Up" pointing="top right" icon={'user'}>
               <Dropdown.Menu>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="My Profile" as={NavLink} exact to="/user"/>
-                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Out" as={NavLink} exact to="/signout"/>
+                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
+                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
               </Dropdown.Menu>
             </Dropdown>
           ) : (
-            <Dropdown id="navbar-current-user" text="Sign In/Sign Up" pointing="top right" icon={'user'}>
+            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
               <Dropdown.Menu>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Up" as={NavLink} exact to="/signup"/>
+                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="My Profile" as={NavLink} exact to="/user"/>
+                <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
             </Dropdown>
 
@@ -75,5 +75,6 @@ export default withTracker(() => {
   return {
     ready,
     user,
+    currentUser: Meteor.user() ? Meteor.user().username : '',
   };
 })(NavBar);

@@ -25,10 +25,10 @@ const standingOptions = [
 ];
 
 const titleOptions = [
-  { key: 'dr', text: 'Dr.', value: 'dr' },
-  { key: 'ms', text: 'Ms.', value: 'ms' },
-  { key: 'mrs', text: 'Mrs.', value: 'mrs' },
-  { key: 'mr', text: 'Mr.', value: 'mr' },
+  { key: 'dr', text: 'Dr.', value: 'Dr. ' },
+  { key: 'ms', text: 'Ms.', value: 'Ms. ' },
+  { key: 'mrs', text: 'Mrs.', value: 'Mrs. ' },
+  { key: 'mr', text: 'Mr.', value: 'Mr. ' },
   { key: 'no', text: 'No Preference', value: 'no' },
 ];
 
@@ -39,7 +39,7 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '',
-      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', error: '', redirectToReferer: false };
+      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', goals: '', error: '', projects: '', role: '', redirectToReferer: false };
   }
 
   state = { showForm: false }
@@ -57,13 +57,13 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a user profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password, title, status, recentpublications, courses, department } = this.state;
+    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password, title, status, recentpublications, courses, department, goals, projects, role } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio, major, classStanding: standing, interests, skills, education, work,
-          references, title, status, recentPublications: recentpublications, courses, department });
+          references, title, status, recentPublications: recentpublications, courses, department, goals, projects, role });
         this.setState({ error: '', redirectToReferer: true });
       }
     });
@@ -143,7 +143,6 @@ class Signup extends React.Component {
               type="profilepic"
               onChange={this.handleChange}/>
             <Form.Input
-              required
               label="Github"
               id="signup-form-github"
               name="github"
@@ -152,7 +151,6 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <Form.Input
-              required
               label="Website"
               id="signup-form-website"
               name="website"
@@ -161,7 +159,6 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <Form.Input
-              required
               label="LinkedIn"
               id="signup-form-linkedin"
               name="linkedin"
@@ -170,11 +167,38 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <Form.Input
+              required
               label="Department"
               id="signup-form-department"
               name="department"
               placeholder="Department"
               type="department"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              required
+              label="Role"
+              id="signup-form-role"
+              name="role"
+              placeholder="Role"
+              type="role"
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Previous Projects"
+              id="signup-form-projects"
+              name="projects"
+              placeholder="What projects have you worked on?"
+              type="projects"
+              onChange={this.handleChange}
+            />
+            <Form.TextArea
+              required
+              label="Goals"
+              id="signup-form-goals"
+              name="goals"
+              placeholder="What are your goals for using this website?"
+              type="goals"
               onChange={this.handleChange}
             />
             <Form.Input
@@ -186,6 +210,7 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <Form.TextArea
+              required
               label="About"
               id="signup-form-bio"
               icon="camera"
@@ -346,8 +371,16 @@ class Signup extends React.Component {
                             type="major"
                             onChange={this.handleChange}
                           />
-                          <Form.Input
+                          <Form.TextArea
                             required
+                            label="Goals"
+                            id="signup-form-goals"
+                            name="goals"
+                            placeholder="What are your goals for using this website?"
+                            type="goals"
+                            onChange={this.handleChange}
+                          />
+                          <Form.Input
                             label="Github"
                             id="signup-form-github"
                             name="github"
@@ -356,7 +389,6 @@ class Signup extends React.Component {
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            required
                             label="Website"
                             id="signup-form-website"
                             name="website"
@@ -365,7 +397,6 @@ class Signup extends React.Component {
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            required
                             label="LinkedIn"
                             id="signup-form-linkedin"
                             name="linkedin"
@@ -392,6 +423,7 @@ class Signup extends React.Component {
                             onChange={this.handleChange}
                           />
                           <Form.TextArea
+                            required
                             label="About"
                             id="signup-form-bio"
                             name="bio"
@@ -399,12 +431,21 @@ class Signup extends React.Component {
                             type="bio"
                             onChange={this.handleChange}
                           />
+                          <Form.TextArea
+                            required
+                            label="Relevant Courses"
+                            id="signup-form-courses"
+                            name="courses"
+                            placeholder="What courses have you taken that are relevant to your goals?"
+                            type="courses"
+                            onChange={this.handleChange}
+                          />
                           <Form.Input
                             required
-                            label="Education"
+                            label="Graduation Date"
                             id="signup-form-education"
                             name="education"
-                            placeholder="When will you graduate and with what degree?"
+                            placeholder="When will you graduate?"
                             type="education"
                             onChange={this.handleChange}
                           />

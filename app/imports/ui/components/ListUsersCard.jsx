@@ -1,10 +1,18 @@
 import React from 'react';
-import { Item, Grid, Divider, Header, Image, Label, Button } from 'semantic-ui-react';
+import { Item, Grid, Divider, Header, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import modal from './modal';
+import ProfileModalStudent from './modal';
+import ProfileModalFaculty from './modal2';
 
 class ListUsersCard extends React.Component {
+
+  modalType = (userRole) => {
+    if (userRole.status === 'Student') {
+      return <ProfileModalStudent user={this.props.user}/>;
+    }
+    return <ProfileModalFaculty user={this.props.user}/>;
+  }
 
   render() {
     /* const [open, setOpen] = React.useState(false); */
@@ -25,7 +33,7 @@ class ListUsersCard extends React.Component {
                   <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                     About Me
                   </Header>
-                  <Button as={modal}/>
+                  {this.modalType(this.props.user)}
                   <span>{this.props.user.bio}</span>
                 </bio>
               </Grid.Column>

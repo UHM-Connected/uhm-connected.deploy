@@ -219,6 +219,18 @@ h5 {
   text-align: center;
 }
 
+.text-overflow-columns {
+  inline-size: 80rem;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+
+.text-overflow-large {
+  inline-size: 60rem;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+
 /* Bottom right text */
 .textblock {
   position: absolute;

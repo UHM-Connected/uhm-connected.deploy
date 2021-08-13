@@ -34,8 +34,8 @@ class CreateNewProject extends React.Component {
   }
 
   submit = () => {
-    const { projectName, faculty, department, goal, studentRequirements, description, researchArea, email } = this.state;
-    Projects.collection.insert({ projectName, faculty, department, goal, studentRequirements, description, researchArea, email },
+    const { projectName, faculty, department, goal, studentRequirements, description, researchArea, email, projectImage } = this.state;
+    Projects.collection.insert({ projectName, faculty, department, goal, studentRequirements, description, researchArea, email, projectImage },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -79,6 +79,7 @@ class CreateNewProject extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Form.Input required label='Email' placeholder='Email Address' name='email' type='email' onChange={this.handleChange} />
+                <Form.Input required label='Image URL' placeholder='Image URL' name='projectImage' type='projectImage' onChange={this.handleChange} />
               </Form.Group>
               <Grid>
                 <Grid.Column textAlign="center">

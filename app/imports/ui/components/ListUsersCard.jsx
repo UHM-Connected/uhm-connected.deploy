@@ -14,6 +14,8 @@ class ListUsersCard extends React.Component {
     return <ProfileModalFaculty user={this.props.user}/>;
   }
 
+  listInterests = () => this.props.user.interests.map(interests => <Label size='tiny' key={interests}> {interests} </Label>)
+
   render() {
     /* const [open, setOpen] = React.useState(false); */
     return (
@@ -38,8 +40,7 @@ class ListUsersCard extends React.Component {
                 </bio>
               </Grid.Column>
               <Divider hidden>
-                <Label size='tiny'>Machine Learning</Label>
-                <Label size='tiny'>Robotics</Label>
+                {this.listInterests()}
               </Divider>
             </Item.Description>
           </Item.Content>

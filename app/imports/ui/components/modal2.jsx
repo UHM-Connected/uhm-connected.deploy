@@ -17,6 +17,10 @@ class ProfileModalFaculty extends React.Component {
     <List.Item>{course}</List.Item>
   </List>)
 
+  listProjects = () => this.props.user.previousProjects.map(project => <List key={project.id} bulleted>
+    <List.Item>{project}</List.Item>
+  </List>)
+
   render() {
     return (
       <Modal
@@ -25,7 +29,7 @@ class ProfileModalFaculty extends React.Component {
         open={this.state.open}
         trigger={<Button className='lmButton' compact floated='right'>Learn More</Button>}
       >
-        <Modal.Header>{this.props.user.firstName} {this.props.user.lastName}<br/> Department of Information and Computer Sciences, {this.props.user.status}</Modal.Header>
+        <Modal.Header>{this.props.user.firstName} {this.props.user.lastName}<br/> {this.props.user.department}, {this.props.user.status}</Modal.Header>
         <Modal.Content image>
           <Modal.Description>
             <Grid columns={2} >
@@ -48,7 +52,7 @@ class ProfileModalFaculty extends React.Component {
               </Grid.Row>
             </Grid>
             <Divider/>
-            <Grid columns={4} padded>
+            <Grid columns={4} padded className="text-overflow-columns">
               <Grid.Row>
                 <Grid.Column>
                   <Header as='h3' >Role</Header>
@@ -79,19 +83,21 @@ class ProfileModalFaculty extends React.Component {
               </Grid.Row>
             </Grid>
             <Divider/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header>
                 Goals
               </Header>
               <Header as='h5'>{this.props.user.goals}</Header>
             </Grid.Column>
             <Divider/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header>About </Header>
+              <p> {this.props.user.bio} </p>
             </Grid.Column>
             <Divider/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header>Previous Projects </Header>
+              {this.listProjects()}
             </Grid.Column>
           </Modal.Description>
         </Modal.Content>

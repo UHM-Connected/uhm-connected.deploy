@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header, Image, Modal, Grid, Icon, Divider } from 'semantic-ui-react';
+import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
@@ -12,6 +12,18 @@ class ProfileModalStudent extends React.Component {
       open: false,
     };
   }
+
+  listInterests = () => this.props.user.interests.map(interest => <List key={interest.id} bulleted>
+    <List.Item>{interest}</List.Item>
+  </List>)
+
+  listWork = () => this.props.user.work.map(work => <List key={work.id} bulleted>
+    <List.Item>{work}</List.Item>
+  </List>)
+
+  listReferences = () => this.props.user.references.map(reference => <List key={reference.id} bulleted>
+    <List.Item>{reference}</List.Item>
+  </List>)
 
   render() {
     return (
@@ -45,50 +57,52 @@ class ProfileModalStudent extends React.Component {
               </Grid.Row>
             </Grid>
             <Divider/>
-            <Grid columns={4} padded>
+            <Grid columns={4} className="text-overflow-columns">
               <Grid.Row>
                 <Grid.Column>
                   <Header as='h3' >Class Standing</Header>
-                  <p>test</p>
+                  <p>{this.props.user.classStanding}</p>
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Interests</Header>
-                  <p>test</p>
+                  {this.listInterests()}
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Graduation Date</Header>
-                  <p>test</p>
+                  <p>{this.props.user.graduationDate}</p>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column>
                   <Header as='h3' >Status</Header>
-                  <p>Student</p>
+                  <p>{this.props.user.status}</p>
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Work</Header>
-                  <p>test</p>
+                  {this.listWork()}
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >References</Header>
-                  <p>test</p>
+                  {this.listReferences()}
                 </Grid.Column>
               </Grid.Row>
             </Grid>
             <Divider/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header>
                 Goals
               </Header>
-              <Header as='h5'>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</Header>
+              <p>{this.props.user.goals}</p>
             </Grid.Column>
             <Divider/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header>About</Header>
+              <p> {this.props.user.bio} </p>
             </Grid.Column>
             <Divider/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header>Previous Experience</Header>
+              <p> {this.props.user.courses} </p>
             </Grid.Column>
           </Modal.Description>
         </Modal.Content>

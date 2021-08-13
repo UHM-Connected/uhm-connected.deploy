@@ -30,6 +30,7 @@ class UsersCollection {
       department: { type: String, optional: true },
       classStanding: { type: String, optional: true },
       role: { type: String, optional: true },
+      graduationDate: { type: String, optional: true },
       projects: { type: String, optional: true },
       interests: { type: Array, optional: true }, 'interests.$': String,
       skills: { type: String, optional: true },

@@ -6,7 +6,7 @@ import ModalProject from './ModalProject';
 
 class ListProjectsCard extends React.Component {
 
-  listResearch = () => this.props.project.researchArea.map(area => <Label.Group size='tiny' key={area.id}> <Label>{area}</Label> </Label.Group>)
+  listResearch = () => this.props.project.researchArea.map(area => <Label size='tiny' key={area}> {area} </Label>)
 
   render() {
 
@@ -17,7 +17,7 @@ class ListProjectsCard extends React.Component {
           <Item.Content>
             <Item.Header>
               <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
-                <Image size='huge' circular src={this.props.project.image}/>
+                <Image size='huge' circular src={this.props.project.projectImage}/>
                 {this.props.project.projectName}
               </Header>
             </Item.Header>

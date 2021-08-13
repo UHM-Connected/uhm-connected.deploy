@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Users } from '../../api/user/User';
 import { Projects } from '../../api/project/Project';
+import { Connects } from '../../api/connect/Connects';
 
 /* eslint-disable no-console */
 
@@ -14,6 +15,18 @@ function addData(data) {
 function addProject(data) {
   console.log(`  Adding: ${data.projectName} (${data.email})`);
   Projects.collection.insert(data);
+}
+
+function addConnect(data) {
+  console.log(`  Adding: ${data.lastName} (${data.email})`);
+  Connects.collection.insert(data);
+}
+
+if (Connects.collection.find().count() === 0) {
+  if (Meteor.settings.defaultConnects) {
+    console.log('Creating default data.');
+    Meteor.settings.defaultConnects.map(data => addConnect(data));
+  }
 }
 
 // Initialize the StuffsCollection if empty.

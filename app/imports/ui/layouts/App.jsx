@@ -16,6 +16,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ListUsers from '../pages/ListUsers';
+import ConnectForm from '../pages/ConnectForm';
 import About from '../pages/About';
 import ListProjects from '../pages/ListProjects';
 import UserPage from '../pages/UserPage';
@@ -37,6 +38,7 @@ class App extends React.Component {
             <Route path="/listusers" component={ListUsers}/>
             <Route path="/about" component={About}/>
             <Route path="/listprojects" component={ListProjects}/>
+            <ProtectedRoute path="/connectform" component={ConnectForm}/>
             <ProtectedRoute path="/createprojects" component={CreateNewProject}/>
             <ProtectedRoute path="/user" component={UserPage}/>
             <ProtectedRoute path="/list" component={ListStuff}/>

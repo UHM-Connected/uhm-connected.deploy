@@ -1,16 +1,14 @@
 import React from 'react';
-import { Item, Grid, Divider, Header, Image, Label, Button } from 'semantic-ui-react';
+import { Item, Grid, Divider, Header, Image, Label } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import ModalProject from './ModalProject';
 
 class ListProjectsCard extends React.Component {
 
+  listResearch = () => this.props.project.researchArea.map(area => <Label.Group size='tiny' key={area.id}> <Label>{area}</Label> </Label.Group>)
+
   render() {
-    /* const [open, setOpen] = React.useState(false); */
-    const projectdesc = [
-      ' For this project, research will take up the majority of the project timespan, ' +
-      'while the latter will be focused on more thoroughly after extensive research is completed. The overall desire for the project is to have a working computer extension that allows a computing device created within the last five years ' +
-      'to be able to detect symbols and patterns and provide accurate, descriptive analysis from various Microsoft files.',
-    ].join(' ');
 
     return (
 
@@ -19,8 +17,8 @@ class ListProjectsCard extends React.Component {
           <Item.Content>
             <Item.Header>
               <Header as={'name'} inverted style={{ paddingTop: '1.5 rem' }}>
-                <Image size='huge' circular src="/images/symbol.png"/>
-                  Symbol Recognition, Information and Computer Sciences
+                <Image size='huge' circular src={this.props.project.image}/>
+                {this.props.project.projectName}
               </Header>
             </Item.Header>
             <Item.Description>
@@ -29,14 +27,12 @@ class ListProjectsCard extends React.Component {
                   <Header sub as={'h4'} style={{ paddingTop: '0.5rem ' }} inverted>
                       Project Description
                   </Header>
-                  <Button as={ModalProject}/>
-                  <span>{projectdesc}</span>
+                  <ModalProject project={this.props.project}/>
+                  <span>{this.props.project.description}</span>
                 </bio>
               </Grid.Column>
               <Divider hidden>
-                <Label size='tiny'>Algorithms</Label>
-                <Label size='tiny'>Operating Systems</Label>
-                <Label size='tiny'>Artificial Intelligence</Label>
+                {this.listResearch()}
               </Divider>
             </Item.Description>
           </Item.Content>
@@ -46,4 +42,8 @@ class ListProjectsCard extends React.Component {
   }
 }
 
-export default ListProjectsCard;
+ListProjectsCard.propTypes = {
+  project: PropTypes.object.isRequired,
+};
+
+export default withRouter(ListProjectsCard);

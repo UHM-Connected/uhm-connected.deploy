@@ -14,6 +14,7 @@ class ProjectsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       projectName: String,
+      image: String,
       faculty: String,
       department: String,
       goal: String,

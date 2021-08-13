@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header, Image, Modal, Grid, Icon, Divider } from 'semantic-ui-react';
+import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
@@ -13,6 +13,10 @@ class ProfileModalFaculty extends React.Component {
     };
   }
 
+  listCourses = () => this.props.user.courses.map(course => <List key={course.id} bulleted>
+    <List.Item>{course}</List.Item>
+  </List>)
+
   render() {
     return (
       <Modal
@@ -21,7 +25,7 @@ class ProfileModalFaculty extends React.Component {
         open={this.state.open}
         trigger={<Button className='lmButton' compact floated='right'>Learn More</Button>}
       >
-        <Modal.Header>Al Goridems<br/> Department of Information and Computer Sciences, Faculty</Modal.Header>
+        <Modal.Header>{this.props.user.firstName} {this.props.user.lastName}<br/> Department of Information and Computer Sciences, {this.props.user.status}</Modal.Header>
         <Modal.Content image>
           <Modal.Description>
             <Grid columns={2} >
@@ -29,16 +33,16 @@ class ProfileModalFaculty extends React.Component {
                 <Image size='small' src="/images/alPic.png" wrapped />
                 <Grid container columns={2}>
                   <Grid.Column width={6}>
-                    <Icon name="mail"/>Email:<br/> algor@hawaii.edu
+                    <Icon name="mail"/>Email:<br/> {this.props.user.email}
                   </Grid.Column>
                   <Grid.Column width={6}>
-                    <Icon name="linkedin"/>LinkedIn:<br/> algor@hawaii.edu
+                    <Icon name="linkedin"/>LinkedIn:<br/> {this.props.user.linkedIn}
                   </Grid.Column>
                   <Grid.Column width={6}>
-                    <Icon name="github"/>GitHub:<br/> algor@hawaii.edu
+                    <Icon name="github"/>GitHub:<br/> {this.props.user.github}
                   </Grid.Column>
                   <Grid.Column width={6}>
-                    <Icon name="globe"/>Website:<br/> algor@hawaii.edu
+                    <Icon name="globe"/>Website:<br/> {this.props.user.website}
                   </Grid.Column>
                 </Grid>
               </Grid.Row>
@@ -48,29 +52,29 @@ class ProfileModalFaculty extends React.Component {
               <Grid.Row>
                 <Grid.Column>
                   <Header as='h3' >Role</Header>
-                  <p>test</p>
+                  <p>{this.props.user.status}</p>
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Interests</Header>
-                  <p>test</p>
+                  <p>{this.props.user.interests}</p>
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Education</Header>
-                  <p>test</p>
+                  <p>{this.props.user.education}</p>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column>
                   <Header as='h3' >Status</Header>
-                  <p>Student</p>
+                  <p>{this.props.user.status}</p>
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Recent Publications</Header>
-                  <p>test</p>
+                  <p>{this.props.user.recentPublications}</p>
                 </Grid.Column>
                 <Grid.Column>
                   <Header as='h3' >Courses Taught</Header>
-                  <p>test</p>
+                  {this.listCourses()}
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -79,15 +83,15 @@ class ProfileModalFaculty extends React.Component {
               <Header>
                 Goals
               </Header>
-              <Header as='h5'>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</Header>
+              <Header as='h5'>{this.props.user.goals}</Header>
             </Grid.Column>
             <Divider/>
             <Grid.Column>
-              <Header>About</Header>
+              <Header>About </Header>
             </Grid.Column>
             <Divider/>
             <Grid.Column>
-              <Header>Previous Projects</Header>
+              <Header>Previous Projects </Header>
             </Grid.Column>
           </Modal.Description>
         </Modal.Content>

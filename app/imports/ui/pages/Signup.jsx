@@ -39,7 +39,7 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '',
-      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', goals: '', error: '', projects: '', role: '', redirectToReferer: false };
+      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', goals: '', error: '', projects: '', role: '', github: '', website: '', linkedin: '', redirectToReferer: false };
   }
 
   state = { showForm: false }
@@ -57,13 +57,14 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a user profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password, title, status, recentpublications, courses, department, goals, projects, role } = this.state;
+    const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password, title, status, recentpublications, courses, department, goals, projects,
+      role, website, linkedin, github } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio, major, classStanding: standing, interests, skills, education, work,
-          references, title, status, recentPublications: recentpublications, courses, department, goals, projects, role });
+          references, title, status, recentPublications: recentpublications, courses, department, goals, projects, role, website, linkedin, github });
         this.setState({ error: '', redirectToReferer: true });
       }
     });

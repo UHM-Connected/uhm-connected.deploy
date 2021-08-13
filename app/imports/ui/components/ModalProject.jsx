@@ -43,7 +43,7 @@ class ModalProject extends React.Component {
               </Grid.Row>
             </Grid>
             <Divider hidden/>
-            <Grid.Column>
+            <Grid.Column className="text-overflow-large">
               <Header dividing>
                   Goals:
               </Header>

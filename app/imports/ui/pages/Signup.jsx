@@ -39,7 +39,7 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { email: '', firstname: '', lastname: '', profilepic: '', bio: '', major: '', standing: '', interests: '', skills: '', education: '', work: '', references: '',
-      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', goals: '', error: '', projects: '', role: '', github: '', website: '', linkedin: '', redirectToReferer: false };
+      department: '', password: '', title: '', status: '', recentpublications: '', courses: '', goals: '', error: '', projects: '', role: '', github: '', website: '', linkedIn: '', redirectToReferer: false };
   }
 
   state = { showForm: false }
@@ -58,13 +58,13 @@ class Signup extends React.Component {
   /* Handle Signup submission. Create user account and a user profile entry, then redirect to the home page. */
   submit = () => {
     const { email, firstname, lastname, profilepic, bio, major, standing, interests, skills, education, work, references, password, title, status, recentpublications, courses, department, goals, projects,
-      role, website, linkedin, github } = this.state;
+      role, website, linkedIn, github } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio, major, classStanding: standing, interests, skills, education, work,
-          references, title, status, recentPublications: recentpublications, courses, department, goals, projects, role, website, linkedin, github });
+          references, title, status, recentPublications: recentpublications, courses, department, goals, projects, role, website, linkedIn, github });
         this.setState({ error: '', redirectToReferer: true });
       }
     });
@@ -160,10 +160,10 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <Form.Input
-              label="LinkedIn"
-              id="signup-form-linkedin"
+              label="linkedIn"
+              id="signup-form-linkedIn"
               name="linkedIn"
-              placeholder="URL to your LinkedIn"
+              placeholder="URL to your linkedIn"
               type="linkedIn"
               onChange={this.handleChange}
             />
@@ -398,11 +398,11 @@ class Signup extends React.Component {
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            label="LinkedIn"
-                            id="signup-form-linkedin"
-                            name="linkedin"
-                            placeholder="linkedin"
-                            type="linkedin"
+                            label="linkedIn"
+                            id="signup-form-linkedIn"
+                            name="linkedIn"
+                            placeholder="linkedIn"
+                            type="linkedIn"
                             onChange={this.handleChange}
                           />
                           <Form.Input

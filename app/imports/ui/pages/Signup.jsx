@@ -162,9 +162,9 @@ class Signup extends React.Component {
             <Form.Input
               label="LinkedIn"
               id="signup-form-linkedin"
-              name="linkedin"
-              placeholder="ULR to your LinkedIn"
-              type="linkedin"
+              name="linkedIn"
+              placeholder="URL to your LinkedIn"
+              type="linkedIn"
               onChange={this.handleChange}
             />
             <Form.Input

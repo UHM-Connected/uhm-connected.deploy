@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Header, Image, Modal, Grid, Icon, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 class ProfileModalStudent extends React.Component {
 
@@ -97,7 +98,7 @@ class ProfileModalStudent extends React.Component {
             labelPosition='right'
             icon='checkmark'
             onClick={() => this.setState({ setOpen: false })}
-            positive
+            positive as={NavLink} activeClassName="active" exact to="/ConnectForm"
           />
         </Modal.Actions>
       </Modal>

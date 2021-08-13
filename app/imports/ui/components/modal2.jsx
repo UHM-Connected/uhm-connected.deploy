@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Header, Image, Modal, Grid, Icon, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class ProfileModalFaculty extends React.Component {
 
@@ -96,6 +98,8 @@ class ProfileModalFaculty extends React.Component {
             icon='checkmark'
             onClick={() => this.setState({ setOpen: false })}
             positive
+            as={NavLink} activeClassName="active" exact to="/ConnectForm"
+
           />
         </Modal.Actions>
       </Modal>
@@ -107,4 +111,4 @@ ProfileModalFaculty.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
-export default ProfileModalFaculty;
+export default withRouter(ProfileModalFaculty);

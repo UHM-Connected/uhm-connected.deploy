@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Header, Loader, Grid, Image, Card, Divider, Icon, Button, List } from 'semantic-ui-react';
+import { Header, Loader, Grid, Image, Card, Divider, Icon, List } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Users } from '../../api/user/User';
 
 class UserPage extends React.Component {

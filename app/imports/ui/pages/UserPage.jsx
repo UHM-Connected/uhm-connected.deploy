@@ -33,16 +33,16 @@ class UserPage extends React.Component {
                 <Grid.Column textAlign='left' >
                   <br/><br/><br/>
                   <Icon name="mail"/>Email:
-                  <p><br/>algor@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.email}<br/><br/></p>
                   <Icon name="linkedin"/>LinkedIn:<br/>
-                  <p><br/>algor@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.linkedIn}<br/><br/></p>
                 </Grid.Column>
                 <Grid.Column>
                   <br/><br/><br/>
                   <Icon name="github"/>GitHub:<br/>
-                  <p><br/>algor@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.github}<br/><br/></p>
                   <Icon name="globe"/>Website:<br/>
-                  <p><br/>algor@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.website}<br/><br/></p>
                 </Grid.Column>
               </Grid.Row>
               <Divider/>
@@ -117,16 +117,16 @@ class UserPage extends React.Component {
                 <Grid.Column>
                   <br/><br/>
                   <Icon name="mail"/>Email:
-                  <p><br/>ajeyers@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.email}<br/><br/></p>
                   <Icon name="linkedin"/>LinkedIn:<br/>
-                  <p><br/>ajeyers@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.linkedIn}<br/><br/></p>
                 </Grid.Column>
                 <Grid.Column>
                   <br/><br/>
                   <Icon name="github"/>GitHub:<br/>
-                  <p><br/>ajeyers@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.github}<br/><br/></p>
                   <Icon name="globe"/>Website:<br/>
-                  <p><br/>ajeyers@hawaii.edu<br/><br/></p>
+                  <p><br/>{this.props.user.website}<br/><br/></p>
                 </Grid.Column>
               </Grid.Row>
               <Divider/>

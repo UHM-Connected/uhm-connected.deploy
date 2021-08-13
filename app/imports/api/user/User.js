@@ -29,6 +29,7 @@ class UsersCollection {
       goal: { type: String, optional: true },
       department: { type: String, optional: true },
       classStanding: { type: String, optional: true },
+      graduationDate: { type: String, optional: true },
       interests: { type: String, optional: true },
       skills: { type: String, optional: true },
       bio: { type: String, optional: true },
@@ -36,12 +37,15 @@ class UsersCollection {
       'previousExperiences.$': { type: String, optional: true },
       previousProjects: { type: Array, optional: true },
       'previousProjects.$': { type: String, optional: true },
-      recentPublications: { type: String, optional: true },
+      recentPublications: { type: Array, optional: true },
+      'recentPublications.$': { type: String, optional: true },
       courses: { type: Array, optional: true },
       'courses.$': { type: String, optional: true },
       education: { type: String, optional: true },
-      work: { type: String, optional: true },
-      references: { type: String, optional: true },
+      work: { type: Array, optional: true },
+      'work.$': { type: String, optional: true },
+      references: { type: Array, optional: true },
+      'references.$': { type: String, optional: true },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

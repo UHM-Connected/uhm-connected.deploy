@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header, Image, Modal, Grid, Icon, Divider, List } from 'semantic-ui-react';
+import { Button, Header, Image, Modal, Grid, Icon, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 
@@ -43,33 +43,51 @@ class ProfileModalStudent extends React.Component {
                 </Grid>
               </Grid.Row>
             </Grid>
-            <Divider hidden/>
+            <Divider/>
+            <Grid columns={4} padded>
+              <Grid.Row>
+                <Grid.Column>
+                  <Header as='h3' >Class Standing</Header>
+                  <p>test</p>
+                </Grid.Column>
+                <Grid.Column>
+                  <Header as='h3' >Interests</Header>
+                  <p>test</p>
+                </Grid.Column>
+                <Grid.Column>
+                  <Header as='h3' >Graduation Date</Header>
+                  <p>test</p>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <Header as='h3' >Status</Header>
+                  <p>Student</p>
+                </Grid.Column>
+                <Grid.Column>
+                  <Header as='h3' >Work</Header>
+                  <p>test</p>
+                </Grid.Column>
+                <Grid.Column>
+                  <Header as='h3' >References</Header>
+                  <p>test</p>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+            <Divider/>
             <Grid.Column>
-              <Header dividing>
-                  Goals:
+              <Header>
+                Goals
               </Header>
-              <Header as='h5'>{this.props.user.goal}</Header>
+              <Header as='h5'>Complete capstone project for graduation and find an internship where I can get hands-on experience in computer engineering.</Header>
             </Grid.Column>
-            <Divider hidden/>
+            <Divider/>
             <Grid.Column>
-              <Header dividing size="small">Previous Experiences</Header>
-              <List bulleted>
-                <List.Item>{this.props.user.courses}</List.Item>
-              </List>
+              <Header>About</Header>
             </Grid.Column>
-            <Divider hidden/>
+            <Divider/>
             <Grid.Column>
-              <Header dividing size="small">Work Experience</Header>
-              <List bulleted>
-                <List.Item>{this.props.user.work}</List.Item>
-              </List>
-            </Grid.Column>
-            <Divider hidden/>
-            <Grid.Column>
-              <Header dividing size="small">Recent Publications</Header>
-              <List bulleted>
-                <List.Item>{this.props.user.recentPublications}</List.Item>
-              </List>
+              <Header>Previous Experience</Header>
             </Grid.Column>
           </Modal.Description>
         </Modal.Content>

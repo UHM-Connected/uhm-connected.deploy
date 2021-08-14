@@ -295,6 +295,7 @@ class Signup extends React.Component {
           </div>
         )
           : (
+        // we chose to stay with the ternary statements because we were unable to implement a working, ESLint acceptable alternative in the time remaining
         // eslint-disable-next-line no-nested-ternary
             (this.state.value === 'faculty member') ? (
               this.toggleForm()

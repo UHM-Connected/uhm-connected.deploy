@@ -404,7 +404,7 @@ class Signup extends React.Component {
                             label="LinkedIn"
                             id="signup-form-linkedIn"
                             name="linkedIn"
-                            placeholder="URL to your linkedIn"
+                            placeholder="URL to your LinkedIn"
                             type="linkedIn"
                             onChange={this.handleChange}
                           />

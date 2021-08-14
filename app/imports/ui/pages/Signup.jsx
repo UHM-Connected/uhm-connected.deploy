@@ -160,10 +160,10 @@ class Signup extends React.Component {
               onChange={this.handleChange}
             />
             <Form.Input
-              label="linkedIn"
+              label="LinkedIn"
               id="signup-form-linkedIn"
               name="linkedIn"
-              placeholder="URL to your linkedIn"
+              placeholder="URL to your LinkedIn"
               type="linkedIn"
               onChange={this.handleChange}
             />
@@ -401,10 +401,10 @@ class Signup extends React.Component {
                             onChange={this.handleChange}
                           />
                           <Form.Input
-                            label="linkedIn"
+                            label="LinkedIn"
                             id="signup-form-linkedIn"
                             name="linkedIn"
-                            placeholder="linkedIn"
+                            placeholder="URL to your linkedIn"
                             type="linkedIn"
                             onChange={this.handleChange}
                           />

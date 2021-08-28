@@ -24,13 +24,11 @@
     {"firstName":  "Nhan", "lastName": "Bui", "email": "nhan@foo.com", "phoneNumber": "123-4567-8910", "status": "Not Interested" },
     {"firstName":  "Germaine", "lastName": "Juan", "email": "germaine@foo.com", "phoneNumber": "123-4567-8910", "status": "Interested" },
     {"firstName":  "Kha", "lastName": "Bui", "email": "kha@foo.com", "phoneNumber": "123-4567-8910", "status": "Pending Review" }
-  ]
-}
+  ],
 
-{
   "galaxy.meteor.com": {
     "env": {
       "MONGO_URL": "mongodb+srv://admin:connectUHM@cluster0.np1oo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     }
-  },
+  }
 }
